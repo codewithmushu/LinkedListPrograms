@@ -29,20 +29,17 @@ namespace LinkedListProgram
             }
         }
 
-        public void InsertAfter(T existingData, T newData)
+        public T Pop()
         {
-            Node<T> currentNode = head;
-            while (currentNode != null && !currentNode.Data.Equals(existingData))
+            if (head == null)
             {
-                currentNode = currentNode.Next;
+                throw new InvalidOperationException("Cannot pop from an empty list.");
             }
 
-            if (currentNode != null)
-            {
-                Node<T> newNode = new Node<T>(newData);
-                newNode.Next = currentNode.Next;
-                currentNode.Next = newNode;
-            }
+            T poppedData = head.Data;
+            head = head.Next;
+
+            return poppedData;
         }
 
         public void Display()
