@@ -10,7 +10,7 @@ namespace LinkedListProgram
     {
         private Node<T> head;
 
-        public void Add(T data)
+        public void Append(T data)
         {
             Node<T> newNode = new Node<T>(data);
 
@@ -40,6 +40,8 @@ namespace LinkedListProgram
             }
             Console.WriteLine();
         }
-
     }
+
+
+
 }
