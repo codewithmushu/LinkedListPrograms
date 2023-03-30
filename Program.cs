@@ -12,8 +12,8 @@ namespace LinkedListProgram
         {
             LinkedList<int> list = new LinkedList<int>();
             list.Append(56);
-            list.Append(30);
             list.Append(70);
+            list.InsertAfter(56, 30);
             list.Display();
         }
     }
