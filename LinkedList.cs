@@ -29,16 +29,28 @@ namespace LinkedListProgram
             }
         }
 
-        public T Pop()
+        public T PopLast()
         {
             if (head == null)
             {
                 throw new InvalidOperationException("Cannot pop from an empty list.");
             }
 
-            T poppedData = head.Data;
-            head = head.Next;
+            if (head.Next == null)
+            {
+                T poppeddata = head.Data;
+                head = null;
+                return poppeddata;
+            }
 
+            Node<T> currentNode = head;
+            while (currentNode.Next.Next != null)
+            {
+                currentNode = currentNode.Next;
+            }
+
+            T poppedData = currentNode.Next.Data;
+            currentNode.Next = null;
             return poppedData;
         }
 
@@ -54,7 +66,6 @@ namespace LinkedListProgram
             Console.WriteLine();
         }
     }
-
 
 
 }
