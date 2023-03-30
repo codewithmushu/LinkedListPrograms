@@ -29,6 +29,22 @@ namespace LinkedListProgram
             }
         }
 
+        public void InsertAfter(T existingData, T newData)
+        {
+            Node<T> currentNode = head;
+            while (currentNode != null && !currentNode.Data.Equals(existingData))
+            {
+                currentNode = currentNode.Next;
+            }
+
+            if (currentNode != null)
+            {
+                Node<T> newNode = new Node<T>(newData);
+                newNode.Next = currentNode.Next;
+                currentNode.Next = newNode;
+            }
+        }
+
         public void Display()
         {
             Node<T> currentNode = head;
