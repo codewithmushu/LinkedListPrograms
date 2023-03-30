@@ -14,7 +14,7 @@ namespace LinkedListProgram
             list.Append(56);
             list.Append(30);
             list.Append(70);
-            list.Pop();
+            list.PopLast();
             list.Display();
         }
     }
